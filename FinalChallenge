@@ -1,0 +1,88 @@
+import java.util.Scanner;
+public class FinalChallenge {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		//ask for the first number
+		System.out.println("please provide a number: ");
+    	int number1 = input.nextInt();
+    	//ask for the second number
+    	System.out.println("please provide another number: ");
+    	int number2 = input.nextInt();
+    	//initializing variables
+    	int smallnum=0;
+    	int bignum=0;
+    	
+    	
+    	//check which number is bigger 
+    	if(number1 < number2) {
+    		smallnum=number1;
+    		bignum=number2;
+    	}
+    	if(number2 < number1) {
+    		smallnum=number2;
+    		bignum=number1;
+    	} 	
+    	//the difference between the two numbers
+    	int difference= bignum - smallnum;
+    	
+    	//assign a value to status for switch statement
+    	String status=null;
+    	if(difference >= 200) {
+    		status="print";
+    	}
+    	else {
+    		status="exit";
+    	}
+    	//if the difference is greater than 200 print otherwise exit program with switch statement
+    	switch(status) {
+    		case "print":
+    			System.out.println("The difference is:  "+ difference);
+    			break;
+    		case "exit":
+    			System.exit(0);
+    			
+    	}
+    	//sum of the numbers that even and divisible by 4 with for loop
+    	int sum =0;
+    	for(int i=smallnum;i<= bignum;i++) {
+    		if((i%2==0) && (i%4==0)) {
+    			sum += i;
+    		}
+    	
+    	}
+    
+    	//sum of the numbers that are even and divisible by 8 with while loop
+    	int sum2=0;
+    	int y=smallnum;
+    	while(y<=bignum) {
+    		if((y%2==0) && (y%8==0)) {
+    			sum2 +=y;
+    		}
+    		y++;
+    	}
+    	
+    	//sum of the numbers that are not even and not divisible by 5 with do while loop
+    	int sum3=0;
+    	int z=smallnum;
+    	do
+    	{
+    		if((z%2!=0) && (z%5!=0)) {
+    			sum3+=z;
+    		}
+    		z++;
+    	}
+    	while (z<=bignum);
+    	
+    	
+    	
+    	input.close();
+    	
+    	//print our results
+    	System.out.println("The sum of the numbers that even and divisible by 4: "+ sum);
+    	System.out.println("The sum of the numbers that are even and divisible by 8: "+ sum2);
+    	System.out.println("The sum of the numbers that are not even and not divisible by 5: "+ sum3);
+
+	}
+
+}
